@@ -17,10 +17,20 @@ public class Deck {
         cards = new ArrayList<>(52);
     }
 }
-    public void ShuffleCard() {
-        for ( int i = 0; i < 52; i ++ ) {
-            int rand = r.nextInt(52);
-            Card temp = Deck[i];
-            Deck[i] = Deck[rand];
-            Deck[rand] = temp;
-        }
+    public void shuffleCards() {
+        Collections.shuffle(cards, new Random());
+        currentCard = 0;
+
+        public Card getNextCard() {
+            Card card = cards.get(index);
+            currentCard++;
+
+            public Deck() {
+                cards = new ArrayList<>(52);
+                for (Card.Rank rank : Card.Rank.values()) {
+                    for (Card.Suit suit : Card.Suit.values()) {
+                        cards.add(new Card(rank, suit));
+                    }
+                }
+                shuffleCards();
+            }
