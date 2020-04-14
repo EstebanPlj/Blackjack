@@ -17,7 +17,7 @@ public class Deck {
         cards = new ArrayList<>(52);
     }
 }
-    public void shuffle() {
+    public void ShuffleCard() {
         for ( int i = 0; i < 52; i ++ ) {
             int rand = r.nextInt(52);
             Card temp = Deck[i];
